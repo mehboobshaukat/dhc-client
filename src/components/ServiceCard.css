@@ -1,0 +1,38 @@
+.service-btn {
+  width: 100%;
+  margin-top: auto;
+  background-color: #3b82f6;
+  border: none;
+  padding: 10px;
+  color: white;
+  transition: 0.3s;
+  border-radius: 500px;
+}
+
+.service-btn:hover {
+  background-color: #0b5ed7;
+}
+.HM-SC-img {
+  width: 100%;          /* card ki width ke hisaab se */
+  height: 300px;        /* fixed height (jitni tumhe chahiye) */
+  object-fit: cover;    /* image ko crop karke fit karega */
+  border-radius: 23px;
+}
+
+.datetime {
+  margin-bottom: 10px;
+}
+
+.HM-SC-I h4 {
+  margin-top: 1rem;
+}
+
+.HM-SC-I {
+    border-radius: 23px !important;
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    background: rgb(59, 130, 246, 0.2) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}

@@ -1,0 +1,501 @@
+/* ========================================
+   PORTFOLIO DETAIL PAGE - CLEAN DESIGN
+   ======================================== */
+
+/* Loading State */
+.detail-loading {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0f172a, #1e3a8a);
+  color: white;
+}
+
+.detail-loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(255,255,255,0.2);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: detailSpin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes detailSpin {
+  to { transform: rotate(360deg); }
+}
+
+/* Error State */
+.detail-error {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0f172a, #1e3a8a);
+}
+
+.detail-error-content {
+  text-align: center;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  padding: 3rem;
+  border-radius: 24px;
+  max-width: 500px;
+}
+
+.detail-error-icon {
+  font-size: 4rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.detail-error-content h2 {
+  color: white;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.detail-error-content p {
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 1.5rem;
+}
+
+.detail-error-btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: #3b82f6;
+  color: white;
+  text-decoration: none;
+  border-radius: 40px;
+  transition: all 0.3s ease;
+}
+
+.detail-error-btn:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
+}
+
+/* ========================================
+   HERO SECTION
+   ======================================== */
+
+.detail-hero {
+  position: relative;
+  height: 60vh;
+  min-height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 56px;
+  overflow: hidden;
+}
+
+.detail-hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.4);
+  transform: scale(1);
+  transition: transform 0.3s ease;
+}
+
+.detail-hero:hover .detail-hero-bg {
+  transform: scale(1.05);
+}
+
+.detail-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(15,23,42,0.85), rgba(30,58,138,0.9));
+}
+
+.detail-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  max-width: 800px;
+  padding: 0 2rem;
+  animation: detailFadeUp 0.8s ease;
+}
+
+@keyframes detailFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.detail-hero-breadcrumb {
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.detail-hero-breadcrumb a {
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.detail-hero-breadcrumb a:hover {
+  color: #3b82f6;
+}
+
+.detail-hero-breadcrumb span {
+  margin: 0 0.5rem;
+  color: rgba(255,255,255,0.5);
+}
+
+.detail-hero-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.detail-hero-meta {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.detail-meta-badge {
+  display: inline-block;
+  background: rgba(59,130,246,0.2);
+  padding: 0.4rem 1rem;
+  border-radius: 40px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.detail-meta-link {
+  display: inline-block;
+  background: rgba(255,255,255,0.1);
+  padding: 0.4rem 1rem;
+  border-radius: 40px;
+  font-size: 0.85rem;
+  text-decoration: none;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.detail-meta-link:hover {
+  background: #3b82f6;
+  transform: translateY(-2px);
+}
+
+/* ========================================
+   MAIN CONTENT SECTION
+   ======================================== */
+
+.detail-main {
+  padding: 4rem 0;
+  background: #f8fafc;
+}
+
+.detail-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Image Gallery */
+.detail-gallery {
+  background: white;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  margin-bottom: 2rem;
+}
+
+.detail-main-image {
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+}
+
+.detail-main-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.detail-thumbnails {
+  display: flex;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: #fff;
+  border-top: 1px solid #e2e8f0;
+  flex-wrap: wrap;
+}
+
+.detail-thumb {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 0.7;
+}
+
+.detail-thumb:hover {
+  opacity: 1;
+  transform: translateY(-3px);
+}
+
+.detail-thumb.active {
+  opacity: 1;
+  border: 2px solid #3b82f6;
+  transform: scale(1.05);
+}
+
+/* Project Info - Left Aligned */
+.detail-info {
+  background: white;
+  border-radius: 24px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.detail-info-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.detail-info-text {
+  color: #475569;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.detail-section-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 0.75rem;
+}
+
+.detail-section-text {
+  color: #64748b;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+/* Tech Tags */
+.detail-tech {
+  margin-bottom: 1.5rem;
+}
+
+.detail-tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.detail-tech-tag {
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  color: white;
+  padding: 0.3rem 1rem;
+  border-radius: 30px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* Challenges & Solution */
+.detail-challenges,
+.detail-solution {
+  margin-bottom: 1.5rem;
+  padding: 1.25rem;
+  background: #f8fafc;
+  border-radius: 16px;
+  border-left: 4px solid #3b82f6;
+}
+
+.detail-challenges .detail-section-title,
+.detail-solution .detail-section-title {
+  margin-bottom: 0.5rem;
+}
+
+/* Action Buttons */
+.detail-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+.detail-action-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.detail-action-btn {
+  display: inline-block;
+  padding: 0.7rem 1.5rem;
+  border-radius: 40px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.detail-action-btn.primary {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: white;
+}
+
+.detail-action-btn.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(59,130,246,0.3);
+}
+
+.detail-action-btn.secondary {
+  background: #f1f5f9;
+  color: #1f2937;
+}
+
+.detail-action-btn.secondary:hover {
+  background: #e2e8f0;
+  transform: translateX(-3px);
+}
+
+.detail-action-btn.dark {
+  background: #1f2937;
+  color: white;
+}
+
+.detail-action-btn.dark:hover {
+  background: #111827;
+  transform: translateY(-2px);
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 768px) {
+  .detail-hero {
+    height: 50vh;
+    min-height: 400px;
+  }
+  
+  .detail-hero-title {
+    font-size: 2rem;
+  }
+  
+  .detail-main-image {
+    height: 300px;
+  }
+  
+  .detail-thumb {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .detail-info {
+    padding: 1.5rem;
+  }
+  
+  .detail-info-title {
+    font-size: 1.5rem;
+  }
+  
+  .detail-section-title {
+    font-size: 1rem;
+  }
+  
+  .detail-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .detail-action-links {
+    justify-content: center;
+  }
+  
+  .detail-action-btn {
+    text-align: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .detail-hero {
+    height: 40vh;
+    min-height: 350px;
+  }
+  
+  .detail-hero-title {
+    font-size: 1.5rem;
+  }
+  
+  .detail-hero-breadcrumb {
+    font-size: 0.7rem;
+  }
+  
+  .detail-meta-badge,
+  .detail-meta-link {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.8rem;
+  }
+  
+  .detail-container {
+    padding: 0 1rem;
+  }
+  
+  .detail-main-image {
+    height: 220px;
+  }
+  
+  .detail-thumb {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .detail-info {
+    padding: 1rem;
+  }
+  
+  .detail-info-title {
+    font-size: 1.3rem;
+  }
+  
+  .detail-info-text,
+  .detail-section-text {
+    font-size: 0.9rem;
+  }
+  
+  .detail-tech-tag {
+    font-size: 0.65rem;
+    padding: 0.2rem 0.8rem;
+  }
+  
+  .detail-action-btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.8rem;
+  }
+}

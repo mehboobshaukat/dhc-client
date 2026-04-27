@@ -1,0 +1,381 @@
+/* ========================================
+   AUTH PAGE - ULTRA PRO DESIGN
+   ======================================== */
+
+.auth-page {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.8), rgba(244, 114, 182, 0.8), rgba(56, 189, 248, 0.8));
+  background-size: 200% 200%;
+  animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Canvas for particles */
+.particle-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Main Container */
+.auth-container {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Auth Card  */
+.auth-card {
+  width: 1100px;
+  max-width: 95%;
+  height: 850px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  border-radius: 40px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.auth-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 35px 60px rgba(0, 0, 0, 0.4);
+}
+
+/* Glowing Orbs */
+.glowing-orb,
+.glowing-orb-2 {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.glowing-orb {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(59,130,246,0.4), transparent);
+  top: -100px;
+  right: -100px;
+  animation: floatOrb 20s infinite ease-in-out;
+}
+
+.glowing-orb-2 {
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, rgba(139,92,246,0.4), transparent);
+  bottom: -80px;
+  left: -80px;
+  animation: floatOrb 18s infinite ease-in-out reverse;
+}
+
+@keyframes floatOrb {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(50px, 30px) scale(1.1); }
+}
+
+/* Panels (Left & Right) */
+.auth-panel {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  z-index: 2;
+}
+
+.left-panel {
+  background: linear-gradient(135deg, rgba(59,130,246,0.95), rgba(37,99,235,0.95));
+  border-radius: 40px 0 0 40px;
+  height: 100%;
+}
+
+.right-panel {
+  background: linear-gradient(135deg, rgba(139,92,246,0.95), rgba(79,70,229,0.95));
+  border-radius: 0 40px 40px 0;
+  height: 100%;
+}
+
+.auth-panel.active {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+.left-panel.active {
+  z-index: 10;
+  transform: translateX(100%);
+
+}
+
+.right-panel.active {
+  z-index: 10;
+  transform: translateX(0%);
+}
+
+
+/* Fix for smooth back to login animation */
+.auth-card.to-login .right-panel {
+  opacity: 0;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateX(100px);
+}
+
+.auth-card.to-login .left-panel {
+  opacity: 1;
+  transform: translateX(100%);
+  pointer-events: auto;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.auth-panel.inactive {
+  pointer-events: none;
+  position: absolute;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* left panel is infact for login */
+.left-panel.inactive {
+  z-index: 0;
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+.right-panel.inactive {
+  z-index: 0;
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+/* Panel Content */
+.panel-content {
+  text-align: center;
+  color: white;
+  padding: 40px;
+  animation: fadeInUp 0.6s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.panel-icon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.panel-content h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  letter-spacing: -0.5px;
+}
+
+.panel-content p {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  margin-bottom: 30px;
+}
+
+.panel-features {
+  text-align: left;
+  margin: 30px 0;
+  padding: 20px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  font-size: 0.85rem;
+}
+
+.feature-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 50%;
+  font-size: 0.75rem;
+}
+
+.panel-switch-btn {
+  padding: 12px 32px;
+  background: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #3b82f6;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.panel-switch-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+/* Form Container */
+.form-container {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(20px);
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 3;
+  box-shadow: 0 0 30px rgba(0,0,0,0.2);
+}
+
+.form-container.login-active {
+  left: 0;
+  border-radius: 40px;
+}
+
+.form-container.register-active {
+  left: 50%;
+  border-radius: 40px;
+}
+
+.form-wrapper {
+  width: 80%;
+  max-width: 320px;
+  animation: fadeInScale 0.4s ease;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Animation for switching */
+.auth-card.to-register .form-container {
+  left: 50%;
+  border-radius: 0 40px 40px 0;
+}
+
+.auth-card.to-register .left-panel {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+
+.auth-card.to-register .right-panel {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+.auth-card.to-login .form-container {
+  left: 0;
+  border-radius: 40px 0 0 40px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .auth-card {
+    flex-direction: column;
+    height: auto;
+  }
+  
+  .auth-panel {
+    width: 100%;
+    padding: 40px;
+  }
+  
+  .left-panel,
+  .right-panel {
+    border-radius: 40px 40px 0 0;
+  }
+  
+  .form-container {
+    position: relative;
+    width: 100%;
+    border-radius: 0 0 40px 40px !important;
+    left: 0 !important;
+  }
+  
+.left-panel.active {
+  transform: translateX(0%);
+}
+
+  .form-container.login-active,
+  .form-container.register-active {
+    border-radius: 0 0 40px 40px !important;
+  }
+  
+  .form-wrapper {
+    padding: 40px 20px;
+  }
+  
+  .panel-content {
+    padding: 20px;
+  }
+  
+  .panel-features {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-card {
+    max-width: 100%;
+  }
+  
+  .panel-content h2 {
+    font-size: 1.5rem;
+  }
+  
+  .form-wrapper {
+    width: 95%;
+  }
+}

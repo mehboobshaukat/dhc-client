@@ -1,0 +1,423 @@
+/* ========================================
+   VERIFY EMAIL PAGE - ULTRA PRO DESIGN
+   ======================================== */
+
+.verify-page {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated Background - Same as Auth Page */
+.verify-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.bg-blur-1,
+.bg-blur-2,
+.bg-blur-3 {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.6;
+  animation: floatBg 20s infinite ease-in-out;
+}
+
+.bg-blur-1 {
+  width: 400px;
+  height: 400px;
+  background: #3b82f6;
+  top: -100px;
+  left: -100px;
+}
+
+.bg-blur-2 {
+  width: 500px;
+  height: 500px;
+  background: #8b5cf6;
+  bottom: -150px;
+  right: -100px;
+  animation-delay: -5s;
+}
+
+.bg-blur-3 {
+  width: 300px;
+  height: 300px;
+  background: #ec4899;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation-delay: -10s;
+}
+
+@keyframes floatBg {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(50px, 30px) scale(1.2); }
+}
+
+/* Main Container */
+.verify-container {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Verify Card - Glassmorphism */
+.verify-card {
+  width: 500px;
+  max-width: 90%;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(20px);
+  border-radius: 48px;
+  padding: 50px 40px;
+  text-align: center;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2),
+              inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: all 0.4s ease;
+  animation: fadeInUp 0.6s ease;
+}
+
+.verify-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 35px 60px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Icons */
+.verify-icon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.success-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #10b981, #059669);
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  font-size: 3rem;
+  color: white;
+  animation: bounce 0.6s ease;
+}
+
+.error-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  font-size: 3rem;
+  color: white;
+  animation: shake 0.5s ease;
+}
+
+.loading-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-8px); }
+  75% { transform: translateX(8px); }
+}
+
+/* Headings */
+.verify-card h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.verify-subtitle {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-bottom: 25px;
+  line-height: 1.5;
+}
+
+.success-text {
+  color: #16a34a;
+  font-weight: 500;
+}
+
+.error-text {
+  color: #dc2626;
+  font-weight: 500;
+}
+
+/* Login Link Button */
+.login-link-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 32px;
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  text-decoration: none;
+  border-radius: 40px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.login-link-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);
+}
+
+/* Resend Section */
+.resend-section {
+  margin-top: 20px;
+  padding-top: 20px;
+}
+
+.divider {
+  position: relative;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.divider span {
+  background: white;
+  padding: 0 15px;
+  color: #94a3b8;
+  font-size: 0.8rem;
+  position: relative;
+  z-index: 1;
+}
+
+.divider::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #e2e8f0;
+  z-index: 0;
+}
+
+/* Input Group - Minimal Bottom Border */
+.input-group {
+  position: relative;
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 16px 0 8px 0;
+  background: transparent;
+  border: none;
+  border-bottom: 1.5px solid #e2e8f0;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  outline: none;
+  color: #1e293b;
+}
+
+.input-group input:focus {
+  border-bottom-color: #8b5cf6;
+}
+
+.input-group label {
+  position: absolute;
+  left: 0;
+  bottom: 8px;
+  color: #94a3b8;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  font-weight: 400;
+}
+
+.input-group input:focus ~ label,
+.input-group input:not(:placeholder-shown) ~ label {
+  bottom: 32px;
+  font-size: 0.75rem;
+  color: #8b5cf6;
+}
+
+.input-icon {
+  position: absolute;
+  right: 0;
+  bottom: 6px;
+  color: #94a3b8;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.input-group input:focus ~ .input-icon {
+  color: #8b5cf6;
+}
+
+/* Resend Button */
+.resend-btn {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+  border: none;
+  border-radius: 40px;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.resend-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(139, 92, 246, 0.4);
+}
+
+.resend-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Resend Message */
+.resend-message {
+  padding: 10px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  font-size: 0.8rem;
+  text-align: center;
+  animation: fadeInUp 0.3s ease;
+}
+
+.resend-message.success {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.resend-message.error {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+/* Loading Spinner for Button */
+.loading-spinner {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 0.6s linear infinite;
+}
+
+/* Back Link */
+.back-link {
+  margin-top: 25px;
+  text-align: center;
+}
+
+.back-link a {
+  color: #8b5cf6;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.back-link a:hover {
+  color: #6d28d9;
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .verify-card {
+    padding: 40px 25px;
+  }
+  
+  .verify-card h2 {
+    font-size: 1.5rem;
+  }
+  
+  .success-icon,
+  .error-icon,
+  .loading-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 2.5rem;
+  }
+  
+  .input-group input {
+    padding: 14px 0 6px 0;
+  }
+  
+  .input-group input:focus ~ label,
+  .input-group input:not(:placeholder-shown) ~ label {
+    bottom: 28px;
+    font-size: 0.7rem;
+  }
+  
+  .input-icon {
+    bottom: 4px;
+  }
+  
+  .resend-btn,
+  .login-link-btn {
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .verify-card {
+    padding: 30px 20px;
+  }
+}

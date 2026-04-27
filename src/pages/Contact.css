@@ -1,0 +1,479 @@
+/* ========================================
+   CONTACT FORM - MINIMALIST DESIGN
+   (Matching Register Form Style)
+   ======================================== */
+
+/* Hero Section */
+.contact-hero {
+  position: relative;
+  height: 40vh;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0f172a, #1e3a8a);
+  margin-top: 56px;
+  overflow: hidden;
+}
+
+.contact-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.05)" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,165.3C1248,149,1344,107,1392,85.3L1440,64L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>') no-repeat bottom;
+  background-size: cover;
+}
+
+.contact-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  animation: fadeInUp 0.8s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.contact-hero-content h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.contact-hero-content p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* Main Container */
+.contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+/* Contact Grid */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+/* Contact Info Cards - Matching Register Card Style */
+.contact-info {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.info-card {
+  background: white;
+  border-radius: 20px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.info-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.info-card h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 0.75rem;
+}
+
+.info-card p {
+  color: #6b7280;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* Contact Form Wrapper - Matching Register Form */
+.contact-form-wrapper {
+  background: white;
+  border-radius: 24px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.contact-form-wrapper h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #1e293b, #3b82f6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.form-subtitle {
+  text-align: center;
+  color: #64748b;
+  font-size: 0.85rem;
+  margin-bottom: 30px;
+}
+
+/* Form Styles - Matching Register Input Groups */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* Input Group - Minimal Bottom Border (Same as Register) */
+.input-group {
+  position: relative;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.input-group input,
+.input-group select,
+.input-group textarea {
+  width: 100%;
+  padding: 16px 0 8px 0;
+  background: transparent;
+  border: none;
+  border-bottom: 1.5px solid #e2e8f0;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  outline: none;
+  color: #1e293b;
+  font-family: inherit;
+}
+
+.input-group select {
+  cursor: pointer;
+  appearance: none;
+  background: transparent;
+}
+
+.input-group textarea {
+  resize: vertical;
+  min-height: 80px;
+  padding: 16px 0 8px 0;
+}
+
+.input-group input:focus,
+.input-group select:focus,
+.input-group textarea:focus {
+  border-bottom-color: #3b82f6;
+}
+
+/* Floating Label (Same as Register) */
+.input-group label {
+  position: absolute;
+  left: 0;
+  bottom: 8px;
+  color: #94a3b8;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  font-weight: 400;
+  background: transparent;
+}
+
+/* Label moves up when input is focused or has value */
+.input-group input:focus ~ label,
+.input-group input:not(:placeholder-shown) ~ label,
+.input-group select:focus ~ label,
+.input-group select:not([value=""]) ~ label,
+.input-group textarea:focus ~ label,
+.input-group textarea:not(:placeholder-shown) ~ label {
+  top: 0px;
+  font-size: 0.75rem;
+  color: #3b82f6;
+}
+
+/* For textarea specific label positioning */
+.input-group.textarea-group label {
+  bottom: 8px;
+}
+
+/* Input Icon at the end (Same as Register) */
+.input-icon {
+  position: absolute;
+  right: 0;
+  bottom: 6px;
+  color: #94a3b8;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.input-group input:focus ~ .input-icon,
+.input-group select:focus ~ .input-icon,
+.input-group textarea:focus ~ .input-icon {
+  color: #3b82f6;
+}
+
+/* Submit Button - Matching Register Button */
+.submit-btn {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  border: none;
+  border-radius: 40px;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+}
+
+.submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Loading Spinner (Same as Register) */
+.loading-spinner {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 0.6s linear infinite;
+  margin-right: 8px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Map Section */
+.map-section {
+  margin-top: 2rem;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.map-section iframe {
+  width: 100%;
+  height: 300px;
+  display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .contact-info {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-hero {
+    height: 35vh;
+    min-height: 250px;
+    margin-top: 56px;
+  }
+
+  .contact-hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .contact-hero-content p {
+    font-size: 0.9rem;
+  }
+
+  .contact-container {
+    padding: 2rem 1rem;
+  }
+
+  .contact-form-wrapper {
+    padding: 1.5rem;
+  }
+
+  .contact-form-wrapper h2 {
+    font-size: 1.5rem;
+  }
+
+  .info-card {
+    padding: 1rem;
+  }
+
+  .info-icon {
+    font-size: 2rem;
+  }
+
+  .info-card h3 {
+    font-size: 1rem;
+  }
+
+  .info-card p {
+    font-size: 0.8rem;
+  }
+
+  .map-section iframe {
+    height: 250px;
+  }
+
+  /* Input adjustments for tablet */
+  .input-group input,
+  .input-group select,
+  .input-group textarea {
+    padding: 14px 0 6px 0;
+  }
+
+  .input-group input:focus ~ label,
+  .input-group input:not(:placeholder-shown) ~ label,
+  .input-group select:focus ~ label,
+  .input-group select:not([value=""]) ~ label,
+  .input-group textarea:focus ~ label,
+  .input-group textarea:not(:placeholder-shown) ~ label {
+    bottom: 28px;
+    font-size: 0.7rem;
+  }
+
+  .input-icon {
+    bottom: 4px;
+  }
+}
+
+@media (max-width: 576px) {
+  .contact-hero {
+    height: 30vh;
+    min-height: 200px;
+  }
+
+  .contact-hero-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .contact-hero-content p {
+    font-size: 0.8rem;
+  }
+
+  .contact-info {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .contact-form-wrapper {
+    padding: 1.2rem;
+  }
+
+  .contact-form-wrapper h2 {
+    font-size: 1.3rem;
+  }
+
+  .form-subtitle {
+    font-size: 0.8rem;
+  }
+
+  .input-group input,
+  .input-group select,
+  .input-group textarea {
+    padding: 12px 0 6px 0;
+    font-size: 0.9rem;
+  }
+
+  .input-group label {
+    font-size: 0.9rem;
+  }
+
+  .input-group input:focus ~ label,
+  .input-group input:not(:placeholder-shown) ~ label,
+  .input-group select:focus ~ label,
+  .input-group select:not([value=""]) ~ label,
+  .input-group textarea:focus ~ label,
+  .input-group textarea:not(:placeholder-shown) ~ label {
+    top: 0px;
+    font-size: 0.65rem;
+  }
+
+  .input-icon {
+    font-size: 0.9rem;
+    bottom: 4px;
+  }
+
+  .submit-btn {
+    padding: 12px;
+    font-size: 0.9rem;
+  }
+
+  .map-section iframe {
+    height: 200px;
+  }
+}
+
+/* Extra Small Devices */
+@media (max-width: 380px) {
+  .contact-hero-content h1 {
+    font-size: 1.2rem;
+  }
+
+  .contact-hero-content p {
+    font-size: 0.7rem;
+  }
+
+  .contact-form-wrapper h2 {
+    font-size: 1.1rem;
+  }
+
+  .info-card {
+    padding: 0.8rem;
+  }
+
+  .info-icon {
+    font-size: 1.5rem;
+  }
+
+  .input-group input,
+  .input-group select,
+  .input-group textarea {
+    padding: 10px 0 5px 0;
+    font-size: 0.85rem;
+  }
+
+  .input-group input:focus ~ label,
+  .input-group input:not(:placeholder-shown) ~ label,
+  .input-group select:focus ~ label,
+  .input-group select:not([value=""]) ~ label,
+  .input-group textarea:focus ~ label,
+  .input-group textarea:not(:placeholder-shown) ~ label {
+    top: 0px;
+    font-size: 0.6rem;
+  }
+}

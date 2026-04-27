@@ -1,0 +1,264 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#root {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+
+
+/* Hero Section - Responsive */
+.hero {
+    background: #0f172a;
+    color: white;
+}
+
+.hero-video-container {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.hero-video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: whitesmoke;
+    text-align: center;
+    top: 40%;
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(59, 130, 246, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 1.5rem 2rem;
+    border-radius: 2rem;
+}
+
+/* Hero Text Responsive */
+.hero-content h1 {
+    font-weight: 800;
+    font-size: clamp(1.8rem, 5vw, 3rem);
+}
+
+.hero-content p {
+    font-size: clamp(1rem, 4vw, 1.8rem);
+}
+
+.hero-content .btn {
+    font-size: clamp(0.9rem, 3vw, 1.1rem);
+    padding: 10px 20px;
+}
+
+/* Small screens ke liye */
+@media (max-width: 768px) {
+    .hero-content {
+        top: 35%;
+        padding: 1rem 1.5rem;
+        width: 95%;
+    }
+    
+    .hero-content h1 {
+        font-size: 1.5rem;
+    }
+    
+    .hero-content p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 576px) {
+    .hero-content {
+        top: 30%;
+        padding: 1rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 1.2rem;
+    }
+}
+
+/* Navbar Styles */
+.glass-navbar {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.nav-link {
+    width: auto;
+    text-align: center;
+    background: none;
+    padding: 5px 10px;
+    margin: 1px 5px;
+    border-radius: 10px;
+    color: #3b82f6 !important;
+    font-weight: bold !important;
+}
+
+.nav-link:hover {
+    border-bottom: 2px solid #3b82f6;
+    cursor: pointer;
+    mix-blend-mode: difference;
+    padding: 5px 10px;
+}
+
+/* Mobile Navbar */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        background: rgba(15, 23, 42, 0.95);
+        backdrop-filter: blur(10px);
+        padding: 1rem;
+        border-radius: 10px;
+        margin-top: 10px;
+    }
+    
+    .nav-link {
+        text-align: center;
+        padding: 10px;
+        margin: 5px 0;
+    }
+}
+
+/* Call to Action Section - Responsive */
+.cta-section {
+    width: 100%;
+    min-height: 60vh;
+    height: auto;
+    background: linear-gradient(135deg, #3b82f6, #0b5ed7);
+    /* padding: 3rem 1rem; */
+}
+
+/* Glass card - Responsive */
+.cta-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    color: rgb(140, 255, 0) !important;
+    box-shadow: 0 0 30px rgba(0,0,0,0.3);
+    /* margin: 0 auto; */
+}
+
+/* CTA Text Responsive */
+.cta-box h2 {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+}
+
+.cta-box p {
+    font-size: clamp(0.9rem, 3vw, 1.2rem);
+}
+
+/* Button glow effect */
+.cta-btn {
+    margin-top: 20px;
+    padding: 12px 25px;
+    border: 2px solid white;
+    border-radius: 10px;
+    background: #3b83f600;
+    color: white;
+    font-size: 16px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.cta-btn:hover {
+    background: #2563eb;
+    box-shadow: 0 0 20px #3b82f6;
+    transform: scale(1.05);
+    border: none;
+}
+
+/* Small screens ke liye CTA */
+@media (max-width: 768px) {
+    .cta-section {
+        min-height: 50vh;
+        padding: 2rem 1rem;
+    }
+    
+    .cta-box {
+        padding: 1.5rem;
+        width: 95%;
+    }
+    
+    .cta-btn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
+
+/* Service Cards Container Responsive */
+.row {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+/* Service Page Styles */
+.scOuter {
+    padding: 0 !important;
+}
+
+.sGrid {
+    margin: 0 1rem !important;
+}
+
+.sp-container {
+    padding: 2rem;
+}
+
+.filter-box {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+.services-header {
+    padding: 40px 0;
+    width: 100%;
+    min-height: 50vh;
+    height: auto;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #0f172a, #1e3a8a);
+    margin-bottom: 40px;
+}
+
+/* Responsive Filter Controls */
+.filter-controls {
+    margin-top: 2rem;
+}
+
+.filter-group select {
+    min-width: 150px;
+}
+
+@media (max-width: 576px) {
+    .filter-group select {
+        min-width: 120px;
+        font-size: 14px;
+    }
+    
+    .services-header {
+        min-height: 40vh;
+        padding: 30px 15px;
+    }
+}

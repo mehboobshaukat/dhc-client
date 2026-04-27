@@ -1,0 +1,524 @@
+/* ========================================
+   BOOKING PAGE - MINIMALIST DESIGN
+   ======================================== */
+
+.booking-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+/* Hero Section */
+.booking-hero {
+  position: relative;
+  height: 40vh;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0f172a, #1e3a8a);
+  margin-top: 56px;
+  overflow: hidden;
+}
+
+.booking-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.05)" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,165.3C1248,149,1344,107,1392,85.3L1440,64L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>') no-repeat bottom;
+  background-size: cover;
+}
+
+.booking-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  animation: fadeInUp 0.8s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.booking-hero-content h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.booking-hero-content p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* Main Container */
+.booking-container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+/* Booking Card */
+.booking-card {
+  background: white;
+  border-radius: 24px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.booking-card h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #1e293b, #3b82f6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.booking-subtitle {
+  text-align: center;
+  color: #64748b;
+  font-size: 0.85rem;
+  margin-bottom: 30px;
+}
+
+/* Selected Service Preview */
+.selected-service-preview {
+  background: linear-gradient(135deg, #eff6ff, #dbeafe);
+  border-radius: 16px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  border-left: 4px solid #3b82f6;
+}
+
+.preview-icon {
+  font-size: 1.5rem;
+}
+
+.preview-content h4 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 0.25rem;
+}
+
+.preview-content p {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+/* Form Styles */
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* Input Group - Minimal Bottom Border */
+.input-group {
+  position: relative;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.input-group input,
+.input-group select {
+  width: 100%;
+  padding: 16px 0 8px 0;
+  background: transparent;
+  border: none;
+  border-bottom: 1.5px solid #e2e8f0;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  outline: none;
+  color: #1e293b;
+  font-family: inherit;
+}
+
+.input-group select {
+  cursor: pointer;
+  appearance: none;
+  background: transparent;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+  border-bottom-color: #3b82f6;
+}
+
+/* Floating Label */
+.input-group label {
+  position: absolute;
+  left: 0;
+  bottom: 8px;
+  color: #94a3b8;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  font-weight: 400;
+  background: transparent;
+}
+
+/* Label moves up when input is focused or has value */
+.input-group input:focus ~ label,
+.input-group input:not(:placeholder-shown) ~ label,
+.input-group select:focus ~ label,
+.input-group select:not([value=""]) ~ label {
+  bottom: 32px;
+  font-size: 0.75rem;
+  color: #3b82f6;
+}
+
+/* Input Icon */
+.input-icon {
+  position: absolute;
+  right: 0;
+  bottom: 6px;
+  color: #94a3b8;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.input-group input:focus ~ .input-icon,
+.input-group select:focus ~ .input-icon {
+  color: #3b82f6;
+}
+
+.loading-text {
+  position: absolute;
+  right: 0;
+  bottom: -20px;
+  font-size: 0.7rem;
+  color: #3b82f6;
+}
+
+/* Submit Button */
+.submit-btn {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  border: none;
+  border-radius: 40px;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+}
+
+.submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 0.6s linear infinite;
+  margin-right: 8px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ========================================
+   LOGIN PROMPT CARD (When not logged in)
+   ======================================== */
+
+.login-prompt-card {
+  background: white;
+  border-radius: 24px;
+  padding: 3rem 2rem;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.prompt-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.login-prompt-card h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.login-prompt-card p {
+  color: #6b7280;
+  margin-bottom: 2rem;
+}
+
+.prompt-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.prompt-login-btn {
+  padding: 12px 32px;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: white;
+  text-decoration: none;
+  border-radius: 40px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.prompt-login-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+}
+
+.prompt-register-btn {
+  padding: 12px 32px;
+  background: transparent;
+  border: 2px solid #3b82f6;
+  color: #3b82f6;
+  text-decoration: none;
+  border-radius: 40px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.prompt-register-btn:hover {
+  background: #3b82f6;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 768px) {
+  .booking-hero {
+    height: 35vh;
+    min-height: 250px;
+    margin-top: 56px;
+  }
+
+  .booking-hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .booking-hero-content p {
+    font-size: 0.9rem;
+  }
+
+  .booking-container {
+    padding: 2rem 1rem;
+  }
+
+  .booking-card {
+    padding: 1.5rem;
+  }
+
+  .booking-card h2 {
+    font-size: 1.5rem;
+  }
+
+  .input-group input,
+  .input-group select {
+    padding: 14px 0 6px 0;
+  }
+
+  .input-group input:focus ~ label,
+  .input-group input:not(:placeholder-shown) ~ label,
+  .input-group select:focus ~ label,
+  .input-group select:not([value=""]) ~ label {
+    bottom: 28px;
+    font-size: 0.7rem;
+  }
+
+  .input-icon {
+    bottom: 4px;
+  }
+
+  .prompt-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .prompt-login-btn,
+  .prompt-register-btn {
+    width: 200px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .booking-hero {
+    height: 30vh;
+    min-height: 200px;
+  }
+
+  .booking-hero-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .booking-hero-content p {
+    font-size: 0.8rem;
+  }
+
+  .booking-card {
+    padding: 1.2rem;
+  }
+
+  .booking-card h2 {
+    font-size: 1.3rem;
+  }
+
+  .booking-subtitle {
+    font-size: 0.8rem;
+  }
+
+  .selected-service-preview {
+    padding: 0.8rem;
+  }
+
+  .preview-icon {
+    font-size: 1.2rem;
+  }
+
+  .preview-content h4 {
+    font-size: 0.85rem;
+  }
+
+  .preview-content p {
+    font-size: 0.75rem;
+  }
+
+  .input-group input,
+  .input-group select {
+    padding: 12px 0 6px 0;
+    font-size: 0.9rem;
+  }
+
+  .input-group label {
+    font-size: 0.9rem;
+  }
+
+  .input-group input:focus ~ label,
+  .input-group input:not(:placeholder-shown) ~ label,
+  .input-group select:focus ~ label,
+  .input-group select:not([value=""]) ~ label {
+    bottom: 26px;
+    font-size: 0.65rem;
+  }
+
+  .input-icon {
+    font-size: 0.9rem;
+    bottom: 4px;
+  }
+
+  .submit-btn {
+    padding: 12px;
+    font-size: 0.9rem;
+  }
+
+  .login-prompt-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .login-prompt-card h2 {
+    font-size: 1.5rem;
+  }
+
+  .prompt-icon {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .booking-hero-content h1 {
+    font-size: 1.2rem;
+  }
+
+  .booking-hero-content p {
+    font-size: 0.7rem;
+  }
+
+  .booking-card h2 {
+    font-size: 1.1rem;
+  }
+
+  .selected-service-preview {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .input-group input,
+  .input-group select {
+    padding: 10px 0 5px 0;
+    font-size: 0.85rem;
+  }
+
+  .input-group input:focus ~ label,
+  .input-group input:not(:placeholder-shown) ~ label,
+  .input-group select:focus ~ label,
+  .input-group select:not([value=""]) ~ label {
+    bottom: 24px;
+    font-size: 0.6rem;
+  }
+}
+
+/* Date Range Info Box */
+.date-range-info {
+  background: #f0fdf4;
+  border-left: 4px solid #22c55e;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.75rem;
+  color: #166534;
+}
+
+.info-icon {
+  font-size: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  .date-range-info {
+    font-size: 0.7rem;
+    padding: 0.6rem 0.8rem;
+  }
+}

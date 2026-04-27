@@ -1,0 +1,316 @@
+/* Service Detail Page Styles */
+.service-detail-page {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+}
+
+/* Hero Banner */
+.service-hero-section {
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+    padding: 4rem 0 3rem 0;
+    margin-top: 56px;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.1)" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,165.3C1248,149,1344,107,1392,85.3L1440,64L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>') no-repeat bottom;
+    background-size: cover;
+    opacity: 0.3;
+}
+
+/* Image Container */
+.service-image-container {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+}
+
+.service-image-container:hover {
+    transform: translateY(-5px);
+}
+
+.service-main-image {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.service-image-container:hover .service-main-image {
+    transform: scale(1.05);
+}
+
+.service-badge {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+/* Info Card */
+.service-info-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: left !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    height: 100%;
+}
+
+#service-info-card {
+    text-align: left !important;
+}
+
+.service-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #0f172a, #3b82f6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+}
+
+/* Stats */
+.service-stats {
+    padding: 1rem 0;
+    border-top: 1px solid #e5e7eb;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #6b7280;
+    font-size: 0.9rem;
+}
+
+.stat-item i {
+    font-size: 1.1rem;
+    color: #3b82f6;
+}
+
+/* Price Card */
+.price-card {
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    border-radius: 15px;
+    padding: 1.5rem;
+    color: white;
+    box-shadow: 0 10px 20px rgba(59,130,246,0.3);
+}
+
+.price-label {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.price-value {
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+
+.price-badge {
+    background: rgba(255,255,255,0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn-book-now {
+    flex: 1;
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(59,130,246,0.3);
+}
+
+.btn-book-now:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(59,130,246,0.4);
+}
+
+.btn-chat {
+    flex: 1;
+    background: white;
+    color: #3b82f6;
+    border: 2px solid #3b82f6;
+    padding: 1rem;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-chat:hover {
+    background: #3b82f6;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Description Card */
+.description-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.nav-tabs {
+    border-bottom: 2px solid #e5e7eb;
+}
+
+.nav-tabs .nav-link {
+    border: none;
+    color: #6b7280;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+}
+
+.nav-tabs .nav-link.active {
+    color: #3b82f6;
+    border-bottom: 3px solid #3b82f6;
+    background: transparent;
+}
+
+/* Process Steps */
+.process-steps {
+    padding: 1rem 0;
+}
+
+.step {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: #f9fafb;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.step:hover {
+    transform: translateX(10px);
+    background: #f3f4f6;
+}
+
+.step-number {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.step-content h5 {
+    margin-bottom: 0.5rem;
+    color: #1f2937;
+}
+
+/* FAQ Items */
+.faq-item {
+    padding: 1rem;
+    background: #f9fafb;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+}
+
+.faq-item h6 {
+    color: #3b82f6;
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .service-hero-section {
+        margin-top: 56px;
+        padding: 2rem 0;
+    }
+    
+    .service-title {
+        font-size: 1.8rem;
+    }
+    
+    .service-info-card {
+        padding: 1.5rem;
+    }
+    
+    .price-value {
+        font-size: 1.8rem;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+    }
+    
+    .step {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .step-number {
+        margin: 0 auto;
+    }
+    
+    .step:hover {
+        transform: translateY(-5px);
+    }
+}
+
+@media (max-width: 576px) {
+    .service-title {
+        font-size: 1.5rem;
+    }
+    
+    .service-info-card {
+        padding: 1rem;
+    }
+    
+    .price-value {
+        font-size: 1.5rem;
+    }
+    
+    .nav-tabs .nav-link {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.service-image-container,
+.service-info-card,
+.description-card {
+    animation: fadeInUp 0.6s ease-out;
+}
